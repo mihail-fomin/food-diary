@@ -6,7 +6,7 @@ export default function Home() {
 		<>
 			<div className="container mx-auto">
 				<h1 className="mt-6 text-3xl">Food Diary</h1>
-				<h2>New note</h2>
+				<h2 className='mt-3'>New note</h2>
 				<AddNote />
 				<NoteList />
 			</div>
