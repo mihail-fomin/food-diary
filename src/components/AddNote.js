@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNotes, useNotesDispatchContext } from "./NotesContext"
+import { useNotesDispatchContext } from "./NotesContext"
 
 
 export default function AddNote() {

@@ -1,9 +1,9 @@
-import moment from 'moment'
 import Note from './Note'
-import { useNotes, useTasksDispatch } from './NotesContext'
+import { useNotes } from './NotesContext'
 export default function NoteList() {
 
 	const notes = useNotes()
+
 	return (
 		<>
 			<ul>
