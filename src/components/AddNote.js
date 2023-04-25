@@ -5,7 +5,7 @@ import { useNotesDispatchContext } from "./NotesContext"
 export default function AddNote() {
 	const [option, setOption] = useState('Breakfast')
 	const [date, setDate] = useState('')
-	const [calories, setCalories] = useState(0)
+	const [calories, setCalories] = useState(500)
 	const dispatch = useNotesDispatchContext()
 
 	const handleChangeOption = (e) => {
