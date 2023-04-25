@@ -1,10 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Note from './Note'
-import { useNotes, useNotesDispatchContext } from './NotesContext'
+import { useNotes } from './NotesContext'
 export default function NoteList() {
 	const [value, setValue] = useState('')
-	const dispatch = useNotesDispatchContext()
-
 	const notes = useNotes()
 
 	return (
@@ -19,9 +17,7 @@ export default function NoteList() {
 			</input>
 
 			<ul>
-
 				{
-
 					notes.filter(note => {
 						if (value === '') {
 							return note
@@ -35,7 +31,6 @@ export default function NoteList() {
 							/>
 						</li>
 					))}
-
 			</ul>
 		</>
 	)
