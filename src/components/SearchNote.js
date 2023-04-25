@@ -6,8 +6,6 @@ export default function SearchNote() {
 	const dispatch = useNotesDispatchContext()
 	const notes = useNotes()
 
-
-
 	useEffect(() => {
 		dispatch({
 			type: 'finded',
@@ -15,11 +13,6 @@ export default function SearchNote() {
 		})
 		console.log('notes: ', notes);
 	}, [value, setValue])
-
-	// useEffect(() => {
-
-	// 	console.log('value: ', value);
-	// }, [value])
 
 
 	return (

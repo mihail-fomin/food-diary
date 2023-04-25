@@ -39,15 +39,11 @@ function notesReducer(notes, action) {
 		case 'removed': {
 			return notes.filter(n => n.id !== action.id)
 		}
-		case 'finded': {
-			return notes.filter(n => n.option
-				.toLowerCase()
-				.includes(action.value.toLowerCase()))
-		}
 		// case 'finded': {
-		// 	return notes.map(note => note.option.match(new RegExp("^" + value, "i")))
+		// 	return notes.filter(n => n.option
+		// 		.toLowerCase()
+		// 		.includes(action.value.toLowerCase()))
 		// }
-
 		default: {
 			throw Error('Unknown action: ' + action.type);
 		}
