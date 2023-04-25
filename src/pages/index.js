@@ -11,7 +11,7 @@ export default function Home() {
 					<h1 className="mt-6 text-3xl font-bold">Food Diary</h1>
 					<h2 className='mt-3'>New note</h2>
 					<AddNote />
-					<SearchNote />
+					{/* <SearchNote /> */}
 					<NoteList />
 				</div>
 			</NotesProvider>

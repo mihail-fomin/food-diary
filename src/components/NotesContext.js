@@ -29,8 +29,6 @@ export function useNotesDispatchContext() {
 function notesReducer(notes, action) {
 	switch (action.type) {
 		case 'added': {
-			console.log('notes:', notes);
-
 			return [...notes, {
 				id: action.id,
 				date: action.date,
