@@ -6,7 +6,7 @@ export default function Note({ note }) {
 
 	return (
 		<>
-			<div className="flex w-[500px] space-between mt-3 items-center">
+			<div className="flex w-[400px] space-between mt-3 items-center">
 				<div className="w-full">
 					<p className="text-gray-500" >{note.date}</p>
 					<p>{`${note.option} - ${note.calories} kcal`}</p>
