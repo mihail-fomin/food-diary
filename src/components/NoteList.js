@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Note from './Note'
 import { useNotes } from './NotesContext'
+
+
 export default function NoteList() {
 	const [value, setValue] = useState('')
 	const notes = useNotes()

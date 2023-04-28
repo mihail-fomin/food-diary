@@ -14,7 +14,7 @@ export default function AddNote() {
 
 	return (
 		<>
-			<form className="flex gap-2 mt-3">
+			<form className="flex flex-wrap gap-2 mt-3">
 				<select
 					className="border-gray-200 rounded-lg"
 					value={option}
