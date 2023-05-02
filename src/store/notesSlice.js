@@ -9,7 +9,7 @@ const noteSlice = createSlice({
 	initialState,
 	reducers: {
 		addNote(state, action) {
-			state.push(action.payload)
+			state.push(action.payload.text)
 		},
 		removeNote(state, action) {
 			return state.filter((note, i) => i !== action.payload.id)

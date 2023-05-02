@@ -1,14 +1,11 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Note from './Note'
-import { useNotes } from './NotesContext'
 
 
 export default function NoteList() {
-	const [value, setValue] = useState('')
-	// const notes = useNotes()
-	const notes = useSelector(state => state.note)
-	const dispatch = useDispatch()
+	const [text, setText] = useState('')
+	const notes = useSelector(state => state.notes.notes)
 
 	return (
 		<>
@@ -16,17 +13,17 @@ export default function NoteList() {
 				className="mt-3 border-gray-200 rounded"
 				type='text'
 				placeholder="Search..."
-				value={value}
-				onChange={(e) => setValue(e.target.value)}
+				value={text}
+				onChange={(e) => setText(e.target.value)}
 			>
 			</input>
 
 			<ul>
 				{
 					notes.filter(note => {
-						if (value === '') {
+						if (text === '') {
 							return note
-						} else if (note.option.toLowerCase().includes(value.toLowerCase())) {
+						} else if (note.option.toLowerCase().includes(text.toLowerCase())) {
 							return note
 						}
 					}).map(note => (
