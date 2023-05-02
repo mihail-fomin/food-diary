@@ -1,6 +1,5 @@
 import AddNote from '@/components/AddNote';
 import NoteList from '@/components/NoteList';
-import SearchNote from '@/components/SearchNote';
 import { store } from '../store/store'
 import { Provider } from 'react-redux'
 

@@ -1,12 +1,13 @@
+import { addNote } from "@/store/notesSlice"
 import { useState } from "react"
-import { useNotesDispatchContext } from "./NotesContext"
+import { useDispatch } from "react-redux"
 
 
 export default function AddNote() {
 	const [option, setOption] = useState('Breakfast')
 	const [date, setDate] = useState('')
 	const [calories, setCalories] = useState(500)
-	const dispatch = useNotesDispatchContext()
+	const dispatch = useDispatch()
 
 	const handleChangeOption = (e) => {
 		setOption(e.target.value);
@@ -44,13 +45,7 @@ export default function AddNote() {
 					className="p-2 ml-2 text-white rounded-lg bg-sky-600 hover:bg-sky-700"
 					onClick={(e) => {
 						e.preventDefault()
-						dispatch({
-							type: 'added',
-							id: nextId++,
-							option: option,
-							date: date,
-							calories: calories,
-						})
+						dispatch(addNote({ date, option, calories }))
 					}}
 				>
 					Add

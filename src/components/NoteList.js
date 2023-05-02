@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Note from './Note'
 
 
@@ -17,7 +17,6 @@ export default function NoteList() {
 				onChange={(e) => setText(e.target.value)}
 			>
 			</input>
-
 			<ul>
 				{
 					notes.filter(note => {
@@ -27,11 +26,10 @@ export default function NoteList() {
 							return note
 						}
 					}).map(note => (
-						<li key={note.id}>
-							<Note
-								note={note}
-							/>
-						</li>
+						<Note
+							key={note.id}
+							note={...note}
+						/>
 					))}
 			</ul>
 		</>

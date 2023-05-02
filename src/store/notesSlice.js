@@ -1,7 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-	notes: []
+	notes: [
+		{ id: 1, date: '23.04.2013', option: 'Breakfast', calories: 500 },
+		{ id: 2, date: '23.04.2013', option: 'Lunch', calories: 1200 },
+		{ id: 3, date: '23.04.2013', option: 'Dinner', calories: 850 },
+	]
 }
 
 const noteSlice = createSlice({
@@ -9,10 +13,15 @@ const noteSlice = createSlice({
 	initialState,
 	reducers: {
 		addNote(state, action) {
-			state.push(action.payload.text)
+			state.notes.push({
+				id: new Date().toISOString(),
+				date: action.payload.date,
+				option: action.payload.option,
+				calories: action.payload.calories,
+			})
 		},
 		removeNote(state, action) {
-			return state.filter((note, i) => i !== action.payload.id)
+			state.notes = state.notes.filter(note => note.id !== action.payload.id)
 		},
 	},
 })
