@@ -25,12 +25,13 @@ export default function NoteList() {
 						} else if (note.option.toLowerCase().includes(text.toLowerCase())) {
 							return note
 						}
-					}).map(note => (
-						<Note
-							key={note.id}
-							note={...note}
-						/>
-					))}
+					})
+						.map(note => (
+							<Note
+								key={note.id}
+								{...note}
+							/>
+						))}
 			</ul>
 		</>
 	)
